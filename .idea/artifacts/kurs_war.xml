@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kurs:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Autohouse.war">
+      <element id="artifact" artifact-name="kurs:war exploded" />
+    </root>
+  </artifact>
+</component>
