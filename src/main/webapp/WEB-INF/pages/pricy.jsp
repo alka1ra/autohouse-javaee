@@ -23,7 +23,7 @@
       <div class = "navbar navbar-inverse navbar-static-top">
           <div class="container">
               <div class="navbar-header">
-                  <a class="navbar-brand" href="index.jsp">Logo</a>
+                  <a class="navbar-brand" href="/">Logo</a>
               </div>
               <div class="collapse navbar-collapse" id="navbar-collapse">
                   <ul class="nav navbar-nav pull-right">

@@ -4,49 +4,49 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="false" %>
 <html lang="ru">
-  <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE-edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-      <link rel="cdd/style.css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="css/style.css" >
-      <title>Автохаус</title>
-      <link href="css/bootstrap.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-  <div class="row" id="navigbar">
-      <div class = "navbar navbar-inverse navbar-static-top">
-          <div class="container">
-              <div class="navbar-header">
-                  <a class="navbar-brand" href="index.jsp">Logo</a>
-              </div>
-              <div class="collapse navbar-collapse" id="navbar-collapse">
-                  <ul class="nav navbar-nav pull-right">
-                      <li><a href="/cars">Автомобили</a></li>
-                      <li class="dropdown"><a href="/buy">Купить</a></li>
-                      <li class="dropdown">
-                          <a href="#" class="dropdown-toggle"
-                             data-toggle="dropdown">Продать<b class="caret"></b></a>
-                          <ul class="dropdown-menu">
-                              <li><a href="/quick">Срочный выкуп</a></li>
-                              <li><a href="/pricy">Комиссионная продажа</a></li>
-                          </ul>
-                      </li>
-                      <li><a href="/about">О нас</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="cdd/style.css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" >
+    <title>Купить</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="row" id="navigbar">
+    <div class = "navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="/cars">Автомобили</a></li>
+                    <li class="dropdown"><a href="/buy">Купить</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Продать<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/quick">Срочный выкуп</a></li>
+                            <li><a href="/pricy">Комиссионная продажа</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/about">О нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
-<div class="row">
-    <div class="col-lg-6">
-        <article>
+    <div class="row">
+        <div class="col-lg-6">
+            <article>
                 <p class="title">Купить автомобиль в кредит</p>
                 <p>Лучшие условия кредитования на автомобили от «4Cars».</p>
                 <p>авто в кредитАвтохаус «4Cars» работает практически со всеми банками Беларуси. Наши специалисты помогут выбрать наиболее подходящий вариант кредита среди многообразия программ кредитования. Это позволяет нам осуществлять продажу авто в кредит на самых выгодных условиях.</p>
@@ -59,94 +59,40 @@
                 <p>Мы оформляем Вам его в кредит;</p>
                 <p>Мы рассчитываемся с продавцом.</p>
             </article>
-    </div>
-  <div class="col-lg-6">
-        <article>
-                    <p class="title">Обмен автомобиля</p>
-                    <p>Решили сменить автомобиль?</p>
-                    <p>обмен автоОбмен авто с «4Cars»- лучший вариант. Весь процесс составит 30 минут! Если стоимость Вашего автомобиля выше стоимости нашего – мы доплатим разницу любым удобным для Вас способом, если ниже – Вы, так же можем оформить кредит на недостающую сумму в кратчайшие сроки.</p>
-                    <p>Порядок действий:</p>
-                    <p>Вы выбираете автомобиль на нашей площадке</p>
-                    <p>Приезжаете к нам на осмотр Вашего автомобиля</p>
-                    <p>В течении 10 минут наш специалист осматривает Ваш автомобиль</p>
-                    <p>Договариваемся с Вами о доплате</p>
-                    <p>В течении 20 минут юридически грамотно оформляем сделку</p>
-                    <p>Наши преимущества:</p>
-                    <p>Мы предлагаем до 90% от рыночной стоимости автомобиля</p>
-                    <p>Процесс обмена займёт не более 30 минут</p>
-                </article>
-    </div>
-       </div>
-    <div class="row">
-        <div class="col-lg-4">
         </div>
-          <div class="widget-area col-lg-4" role="complementary">
-            <aside class="widget widget_text">
-                <h4 class="widget-title">Online-заявка:</h4>
-                <br>
-                <div class="textwidget">
-                    <div role="form">
-                        <div class="screen-reader-response"></div>
-                        <form class="quick_form" action="" method="post">
-                            <ul>
-                                <li>
-                                    <h4>Контактная информация для связи</h4>
-                                </li>
-                                <li>
-                                    <b>Имя:</b>
-                                    <br>
-                                    <span><input name="name" aria-required="true" aria-invalid="false" type="text">
-                                    </span>
-                                    <br>
-                                </li>
-                                <li>
-                                    <b>Телефон:</b>
-                                    <br>
-                                    <span>
-                                        <input name="phone" aria-required="true" aria-invalid="false" type="tel">
-                                    </span>
-                                    <br>
-                                </li>
-                                <li>
-                                    <b>e-mail:</b>
-                                    <br>
-                                    <span>
-                                        <input name="email"
-                                               pattern="[_A-Za-z0-9\-\+]+?(\.[_A-Za-z0-9\-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*?(\.[A-Za-z]{2,})$"
-                                               required title="Fill field obligatory"
-                                               type="email">
-                                    </span>
-                                    <br>
-                                </li>
-                                <li>
-                                    <p>
-                                        <input value="Отправить" type="submit">
-                                    </p>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
-                </div>
-            </aside>
+        <div class="col-lg-6">
+            <article>
+                <p class="title">Обмен автомобиля</p>
+                <p>Решили сменить автомобиль?</p>
+                <p>обмен автоОбмен авто с «4Cars»- лучший вариант. Весь процесс составит 30 минут! Если стоимость Вашего автомобиля выше стоимости нашего – мы доплатим разницу любым удобным для Вас способом, если ниже – Вы, так же можем оформить кредит на недостающую сумму в кратчайшие сроки.</p>
+                <p>Порядок действий:</p>
+                <p>Вы выбираете автомобиль на нашей площадке</p>
+                <p>Приезжаете к нам на осмотр Вашего автомобиля</p>
+                <p>В течении 10 минут наш специалист осматривает Ваш автомобиль</p>
+                <p>Договариваемся с Вами о доплате</p>
+                <p>В течении 20 минут юридически грамотно оформляем сделку</p>
+                <p>Наши преимущества:</p>
+                <p>Мы предлагаем до 90% от рыночной стоимости автомобиля</p>
+                <p>Процесс обмена займёт не более 30 минут</p>
+            </article>
         </div>
-        <div class="col-lg-4">
-        </div>
-    </div>
     </div>
     <br>
-  <div class="copyright">
-      <div class="container">
-          <div class="col-md-6">
-              <p>© 2017 - Alexandra Rogockaja</p>
-          </div>
-          <div class="col-md-6">
-              <ul class="bottom_ul">
-                  <li><a href="/sign">Sign in/Sign up</a></li>
-              </ul>
-          </div>
-      </div>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  </body>
+    <div class="copyright">
+        <div class="container">
+            <div class="col-md-6">
+                <p>© 2017 - Alexandra Rogockaja</p>
+            </div>
+            <div class="col-md-6">
+                <ul class="bottom_ul">
+                    <li><a href="/sign">Sign in/Sign up</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
 </html>
+

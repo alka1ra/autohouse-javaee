@@ -23,7 +23,7 @@
       <div class = "navbar navbar-inverse navbar-static-top">
           <div class="container">
               <div class="navbar-header">
-                  <a class="navbar-brand" href="index.jsp">Logo</a>
+                  <a class="navbar-brand" href="/">Автохаус</a>
               </div>
               <div class="collapse navbar-collapse" id="navbar-collapse">
                   <ul class="nav navbar-nav pull-right">
@@ -43,40 +43,40 @@
           </div>
       </div>
   </div>
-  <h2 class="centered">Автомобили</h2>
-  <div id="product_price_filter-2" class="filter-widget product_price_filter">			<div class="price-filter">
-      <span class="filter-label">Цена:</span>
-      <form class="price-filter-form" action="">
-          <input class="number-box" placeholder="у.е." type="number" min="0" step="0.01" name="min-price" value=""> - <input placeholder="у.е." min="0" step="0.01" type="number" class="number-box" name="max-price" value="">
-          <input class="price-filter-submit" type="submit" value="OK">
-      </form>
-  </div>
-  </div>
-  <c:if test="${!empty listCars}">
-      <div class="content-product">
-          <c:forEach items="${listCars}" var="car">
-              <div class="col-md-4 col-d">
-                  <a href="/cardata/${car.id}">
-                      <div class="men-grid in-men">
-                          <img class="img-responsive" src="images/123123.jpg" alt="">
-                          <div class="value-in">
-                            <p>${car.brand} ${car.model}</p>
-                            <span>${car.price} у.е.</span>
-                            <span>${car.yeaOfIssue} г.в.</span>
-                            <div class="clearfix"></div>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+              <h2 class="centered" style="text-align: center">Автомобили в наличии</h2>
+              <c:if test="${!empty listCars}">
+                  <div class="content-product">
+                      <c:forEach items="${listCars}" var="car">
+                          <div class="col-md-4 col-d">
+                              <a href="/cardata/${car.id}">
+                                  <div class="men-grid in-men">
+                                      <img class="img-responsive" src="images/${car.id}.jpg" alt="">
+                                      <br>
+                                      <div class="containter">
+                                          <div class="row">
+                                              <div class="value-in">
+                                                <p>${car.brand} ${car.model}</p>
+                                                <span>${car.price} у.е.</span>
+                                                <span>${car.yeaOfIssue} г.в.</span>
+                                                <div class="clearfix"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </a>
                           </div>
-                      </div>
-                  </a>
-              </div>
-          </c:forEach>
-          <div class="clearfix"> </div>
+                      </c:forEach>
+                      <div class="clearfix"> </div>
+                  </div>
+              </c:if>
+          </div>
       </div>
-  </c:if>
+  </div>
   <br>
-
-
-
-
   <div class="copyright">
       <div class="container">
           <div class="col-md-6">

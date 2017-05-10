@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="by.bsuir.ief.eeb.rahockaja.autohouse"/>
+    <context:component-scan base-package="by.bsuir.rahockaja.autohouse"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -18,7 +18,7 @@
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://localhost:3306/AUTOHOUSE"/>
+                  value="jdbc:mysql://localhost:3306/autohouse"/>
         <property name="username" value="root"/>
         <property name="password" value="olkatima28"/>
     </bean>
@@ -29,27 +29,52 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>by.bsuir.ief.eeb.rahockaja.autohouse.model.instances.Car</value>
+                <value>by.bsuir.rahockaja.autohouse.model.Car</value>
+                <value>by.bsuir.rahockaja.autohouse.model.Credit</value>
+                <value>by.bsuir.rahockaja.autohouse.model.Form</value>
+                <!--<value>by.bsuir.rahockaja.autohouse.model.User</value>-->
             </list>
         </property>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
+                </prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
     </bean>
 
-    <!--CarDao and CarService beans-->
-    <bean id="carDao" class="by.bsuir.ief.eeb.rahockaja.autohouse.dao.CarDaoImpl">
+    <!--CarDaokDao and CarService beans-->
+    <bean id="carDao" class="by.bsuir.rahockaja.autohouse.dao.CarDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="carService" class="by.bsuir.ief.eeb.rahockaja.autohouse.service.CarServiceImpl">
-        <property name="carDao" ref="carDao"/>
+    <bean id="creditDao" class="by.bsuir.rahockaja.autohouse.dao.CreditDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <context:component-scan base-package="by.bsuir.ief.eeb.rahockaja.autohouse"/>
+    <bean id="formDao" class="by.bsuir.rahockaja.autohouse.dao.FormDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <!--<bean id="userDao" class="by.bsuir.rahockaja.autohouse.dao.UserDaoImpl">-->
+        <!--<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>-->
+    <!--</bean>-->
+
+    <bean id="carService" class="by.bsuir.rahockaja.autohouse.service.CarServiceImpl">
+        <property name="carDao" ref="carDao"/>
+    </bean>
+    <bean id="creditService" class="by.bsuir.rahockaja.autohouse.service.CreditServiceImpl">
+        <property name="creditDao" ref="creditDao"/>
+    </bean>
+    <bean id="formService" class="by.bsuir.rahockaja.autohouse.service.FormServiceImpl">
+        <property name="formDao" ref="formDao"/>
+    </bean>
+    <!--<bean id="userService" class="by.bsuir.rahockaja.autohouse.service.UserServiceImpl">-->
+        <!--<property name="userDao" ref="userDao"/>-->
+    <!--</bean>-->
+
+    <context:component-scan base-package="by.bsuir.rahockaja"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 

@@ -1,198 +1,73 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
-<%@ page session="false" contentType="text/html;charset=utf-8" %>
-<html>
-    <head>
-        <title>Автомобили</title>
-    </head>
-    <body>
-        <h1>Список авто в наличии</h1>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page session="false" %>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="cdd/style.css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" >
+    <title>Администратор</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="row" id="navigbar">
+    <div class = "navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="/cars">Автомобили</a></li>
+                    <li class="dropdown"><a href="/buy">Купить</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Продать<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/quick">Срочный выкуп</a></li>
+                            <li><a href="/pricy">Комиссионная продажа</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/about">О нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-        <c:if test="${!empty listCars}">
-            <table class="tg">
-                <tr>
-                    <th>ID</th>
-                    <th>Цена</th>
-                    <th>Марка</th>
-                    <th>Модель</th>
-                    <th>Год выпуска</th>
-                    <th>Трансмиссия</th>
-                    <th>Тип топлива</th>
-                    <th>Пробег</th>
-                    <th>Объём двигателя</th>
-                    <th>Тип кузова</th>
-                    <th>Привод</th>
-                    <th>Цвет</th>
-                    <th>Описание</th>
-                    <th>Редактировать</th>
-                    <th>Удалить</th>
-                </tr>
-                <c:forEach items="${listCars}" var="car">
-                    <tr>
-                        <td>${car.id}</td>
-                        <td>${car.price} у.е.</td>
-                        <td>${car.brand}</td>
-                        <td>${car.model}</td>
-                        <td>${car.yeaOfIssue}</td>
-                        <td>${car.transmission}</td>
-                        <td>${car.fuelType}</td>
-                        <td>${car.mileage} км</td>
-                        <td>${car.engineCapacity} см.куб.</td>
-                        <td>${car.bodyType}</td>
-                        <td>${car.driveUnit}</td>
-                        <td>${car.colour}</td>
-                        <td>${car.description}</td>
-                        <td><a href="<c:url value='/edit/${car.id}'/>">Редактировать</a></td>
-                        <td><a href="<c:url value='/remove/${car.id}'/>">Удалить</a></td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </c:if>
-        <h1>Добавить автомобиль:</h1>
-        <c:url var="addAction" value="/admin/add"/>
-        <form:form action="${addAction}" commandName="car">
-            <table>
-                <c:if test="${!empty car.model}">
-                    <tr>
-                        <td>
-                            <form:label path="id">
-                                <spring:message text="ID"/>
-                            </form:label>
-                        </td>
-                        <td>
-                            <form:input path="id" readonly="true" size="8" disabled="true"/>
-                            <form:hidden path="id"/>
-                        </td>
-                    </tr>
-                </c:if>
-                <tr>
-                    <td>
-                        <form:label path="price">
-                            <spring:message text="Цена"/>
-                        </form:label>
-                    </td>
-                    <td>
-                        <form:input path="price"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td><form:label path="brand">
-                        <spring:message text="Марка"/>
-                    </form:label>
-                    </td>
-                    <td>
-                        <form:input path="brand"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="model">
-                            <spring:message text="Модель"/>
-                        </form:label>
-                    </td>
-                    <td>
-                        <form:input path="model"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="yeaOfIssue">
-                            <spring:message text="Год выпуска"/>
-                        </form:label></td>
-                    <td>
-                        <form:input path="yeaOfIssue"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="transmission">
-                            <spring:message text="Трансмиссия"/>
-                        </form:label></td>
-                    <td>
-                        <form:input path="transmission"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="fuelType">
-                            <spring:message text="Тип топлива"/>
-                        </form:label>
-                    </td>
-                    <td>
-                        <form:input path="fuelType"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="mileage">
-                            <spring:message text="Пробег"/>
-                        </form:label></td>
-                    <td>
-                        <form:input path="mileage"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="engineCapacity">
-                            <spring:message text="Объём двигателя"/>
-                        </form:label>
-                    </td>
-                    <td>
-                        <form:input path="engineCapacity"/></td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="bodyType">
-                            <spring:message text="Тип кузова"/>
-                        </form:label>
-                    </td>
-                    <td>
-                        <form:input path="bodyType"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="driveUnit">
-                            <spring:message text="Привод"/>
-                        </form:label>
-                    </td>
-                    <td>
-                        <form:input path="driveUnit"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="colour">
-                            <spring:message text="Цвет"/>
-                        </form:label>
-                    </td>
-					<td>
-                        <form:input path="colour"/>
-                    </td>
-				</tr>
-				<tr>
-                    <td>
-                        <form:label path="description">
-                            <spring:message text="Описание"/>
-                        </form:label>
-                    </td>
-					<td>
-                        <form:input path="description"/>
-                    </td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<c:if test="${!empty car.model}">
-							<input type="submit" value="<spring:message text="Редактировать авто"/>"/> 
-						</c:if>
-						<c:if test="${empty car.model}">
-							<input type="submit" value="<spring:message text="Добавить авто"/>"/>
-						</c:if>
-					</td>
-				</tr>
-			</table>
-		</form:form>
-	</body>
+<div class="row">
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6"></div>
+</div>
+<div class="row">
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6"></div>
+</div>
+<br>
+<br>
+<br>
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-6">
+            <p>© 2017 - Alexandra Rogockaja</p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+                <li><a href="/sign">Sign in/Sign up</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
 </html>

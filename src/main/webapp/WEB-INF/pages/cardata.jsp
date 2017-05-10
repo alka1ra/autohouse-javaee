@@ -72,37 +72,30 @@
     </script>
 </head>
 <body>
-    <div class="row" id="navigbar">
-        <div class = "navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Logo</a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-collapse">
-                    <ul class="nav navbar-nav pull-right">
-                        <li><a href="cars.jsp">Автомобили</a></li>
-                        <li class="dropdown">
-                            <a href="buy.jsp" class="dropdown-toggle"
-                               data-toggle="dropdown">Купить<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#"></a>Купить в кредит</li>
-                                <li><a href="#"></a>Обмен авто</li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle"
-                               data-toggle="dropdown">Продать<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="quick.jsp"></a>Срочный выкуп</li>
-                                <li><a href="pricy.jsp"></a>Комиссионная продажа</li>
-                            </ul>
-                        </li>
-                        <li><a href="/about">О нас</a></li>
-                    </ul>
-                </div>
+<div class="row" id="navigbar">
+    <div class = "navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Автохаус</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="/cars">Автомобили</a></li>
+                    <li class="dropdown"><a href="/buy">Купить</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown">Продать<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/quick">Срочный выкуп</a></li>
+                            <li><a href="/pricy">Комиссионная продажа</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/about">О нас</a></li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
     <ol class="breadcrumb">
         <li><a href="/">Главная</a></li>
         <li><a href="/cars">Автомобили</a></li>
@@ -115,7 +108,7 @@
                         <ul id="etalage">
                             <li>
                                 <a href="optionallink.html">
-                                    <img class="etalage_thumb_image img-responsive" src="images/sin.jpg" alt="" >
+                                    <img class="etalage_thumb_image img-responsive" src="images/${car.id}.jpg" alt="" >
                                     <img class="etalage_source_image img-responsive" src="images/sin-1.jpg" alt="" >
                                 </a>
                             </li>
@@ -124,7 +117,7 @@
 								<img class="etalage_source_image img-responsive" src="images/sin-2.jpg" alt="" >
 							</li>
 							<li>
-								<img class="etalage_thumb_image img-responsive" src="images/sin.jpg"  alt="" >
+								<img class="etalage_thumb_image img-responsive" src="images/${car.id}.jpg"  alt="" >
 								<img class="etalage_source_image img-responsive" src="images/sin-1.jpg" alt="" >
 							</li>
 							<li>
@@ -139,20 +132,36 @@
                         <div class="desc1">
                             <h3>${car.brand} ${car.model}</h3>
                             <p>${car.description}</p>
-                            <h5>${car.price} у.е.<a href="#">click for offer</a></h5>
-
-                            <div class="share-desc">
-                                <div class="share">
-                                    <h4>Поделиться: </h4>
-                                    <ul class="share_nav">
-                                        <li><a href="#"><img src="images/facebook.png" title="facebook"></a></li>
-                                        <li><a href="#"><img src="images/twitter.png" title="Twiiter"></a></li>
-                                        <li><a href="#"><img src="images/rss.png" title="Rss"></a></li>
-                                        <li><a href="#"><img src="images/gpluse.png" title="Google+"></a></li>
-                                    </ul>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
+                            <h5>${car.price} у.е.</h5>
+                            <a href="/count/${car.id}"  class="btn large btn-success">Рассчитать кредит</a>
+                            <%--<div class="containter">--%>
+                                <%--<div class="row">--%>
+                                    <%--<div class="col-md-6">--%>
+                                        <%--<div class="value-in">--%>
+                                            <%--<p>${car.brand} ${car.model}</p>--%>
+                                            <%--<span>${car.price} у.е.</span>--%>
+                                            <%--<span>${car.yeaOfIssue} г.в.</span>--%>
+                                            <%--<div class="clearfix"></div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                    <%--<div class="col-md-1"></div>--%>
+                                    <%--<div class="col-md-4">--%>
+                                        <%--<a href="/count/${car.id}"  class="btn large btn-success">Рассчитать кредит</a>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                            <%--<div class="share-desc">--%>
+                                <%--<div class="share">--%>
+                                    <%--<h4>Поделиться: </h4>--%>
+                                    <%--<ul class="share_nav">--%>
+                                        <%--<li><a href="#"><img src="images/facebook.png" title="facebook"></a></li>--%>
+                                        <%--<li><a href="#"><img src="images/twitter.png" title="Twiiter"></a></li>--%>
+                                        <%--<li><a href="#"><img src="images/rss.png" title="Rss"></a></li>--%>
+                                        <%--<li><a href="#"><img src="images/gpluse.png" title="Google+"></a></li>--%>
+                                    <%--</ul>--%>
+                                <%--</div>--%>
+                                <%--<div class="clearfix"></div>--%>
+                            <%--</div>--%>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -206,6 +215,7 @@
     <br>
     <div class="copyright">
         <div class="container">
+            <div class="footer-bottom">
             <div class="col-md-6">
                 <p>© 2017 - Alexandra Rogockaja</p>
             </div>
@@ -213,6 +223,7 @@
                 <ul class="bottom_ul">
                     <li><a href="/sign">Sign in/Sign up</a></li>
                 </ul>
+            </div>
             </div>
         </div>
     </div>

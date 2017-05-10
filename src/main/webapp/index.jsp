@@ -20,10 +20,10 @@
   </head>
   <body>
   <div class="row" id="navigbar">
-      <div class = "navbar navbar-inverse navbar-static-top">
+      <div class = "navbar navbar-inverse navbar-fixed-top">
           <div class="container">
               <div class="navbar-header">
-                  <a class="navbar-brand" href="index.jsp">Logo</a>
+                  <a class="navbar-brand" href="/">Автохаус</a>
               </div>
               <div class="collapse navbar-collapse" id="navbar-collapse">
                   <ul class="nav navbar-nav pull-right">
@@ -43,13 +43,8 @@
           </div>
       </div>
   </div>
-  <div class="row">
-      <div class="col-lg-6 col-lg-offset-2">
-          <h1>Автохаус</h1>
-      </div>
-      <div class="col-lg-4"></div>
-      <div class="col-lg-4"></div>
-  </div>
+  <br>
+  <br>
   <br>
   <div class="container">
 

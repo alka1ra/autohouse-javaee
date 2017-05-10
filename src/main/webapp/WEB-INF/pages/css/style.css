@@ -30,7 +30,15 @@
     
 }
 
-.copyright { min-height:40px; background-color:#000000;}
+.copyright {
+    height:33px;
+    background-color:#333;
+	position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; right: 0; /* Левый нижний угол */
+    /*padding: 10px; !* Поля вокруг текста *!*/
+    color: #fff; /* Цвет текста */
+    /*width: 100%; !* Ширина слоя *!*/
+}
 .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0;}
 .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
 .post p { font-size:12px; color:#FFF; line-height:20px;}
@@ -55,22 +63,12 @@ h3 {
     margin-bottom: 15px;
 }
 
-/*--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
 body{
 	background:#fff;
 	font-family: 'Quicksand', sans-serif;	
 }
 body a{
 	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
 }
 ul{
 	padding: 0;
@@ -2211,4 +2209,8 @@ ul#etalage {
 li.etalage_small_thumbs {
   width: 250px !important;
 }
+}
+
+.value-in{
+    text-align: center;
 }
